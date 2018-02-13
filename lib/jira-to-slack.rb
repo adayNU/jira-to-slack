@@ -22,7 +22,7 @@ class JiraToSlack
     # multiline quote
     string.gsub!(/\{quote\}(.*?)\{quote\}/m) {|e| "#{$1.split("\n").map{|f| "> #{f}"}.join("\n")}"}
     # headings
-    string.gsub!(/^h[0-9]\. (.*?)$/) {|e| "*#{$1}*"}
+    string.gsub!(/^h[0-9]\. (.*?)$/) {|e| "*#{$1.strip}*"}
 
     string
   end
